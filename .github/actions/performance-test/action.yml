@@ -1,0 +1,11 @@
+name: 'Performance Test'
+description: 'Run performance tests using JMeter'
+inputs:
+  test_file:
+    description: 'The JMeter test file to run'
+    required: true
+runs:
+  using: 'docker'
+  image: 'app.dockerfile'
+  args:
+    - ${{ inputs.test_file }}
